@@ -20,7 +20,6 @@ def get_tail_position(hx: int, hy: int, tx: int, ty: int) -> Tuple[int, int]:
         return (hx + tx)//2, (hy + ty)//2
     elif hx == tx or abs(hy - ty) == 2 :  # same row
         return hx, (hy + ty)//2
-    # else:
     elif hy == ty or abs(hx - tx) == 2:  # same column
         return (hx + tx)//2, hy
 
@@ -67,13 +66,10 @@ def second() -> int:
         dx, dy = direction_to_delta[direction]
 
         for time in range(int(times)):
-            prevx, prevy = rope[0]
             rope[0] = rope[0][0] + dx, rope[0][1] + dy
 
             for i in range(1, len(rope)):
                 new = get_tail_position(rope[i - 1][0], rope[i - 1][1], rope[i][0], rope[i][1])
-
-                prevx, prevy = rope[i]
 
                 rope[i] = new
 
@@ -88,5 +84,5 @@ def second() -> int:
 
 
 if __name__ == '__main__':
-    # print(first())
+    print(first())
     print(second())
