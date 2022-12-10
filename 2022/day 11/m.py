@@ -1,10 +1,10 @@
-# screen
+# 
 
 from functools import reduce
 
 
 filename = "input.txt"
-# filename = "sample.txt"
+filename = "sample.txt"
 
 with open(filename, "r") as f:
     instructions = [l.strip().split(' ') for l in f.readlines()]
