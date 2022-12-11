@@ -1,7 +1,5 @@
 # screen
 
-from functools import reduce
-
 
 filename = "input.txt"
 # filename = "sample.txt"
