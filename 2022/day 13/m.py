@@ -1,7 +1,6 @@
 # sorting packets
 
-from my_functions import deserialize_nested_list, compare_packets, \
-    ComparisonEnum
+from my_functions import deserialize_nested_list, compare_packets, ComparisonEnum
 # from ast import literal_eval
 from functools import cmp_to_key
 
