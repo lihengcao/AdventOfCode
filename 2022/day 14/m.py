@@ -1,28 +1,30 @@
-# sorting packets
+# particle simulator
 
-from my_functions import *
+from my_code import *
 
 
 filename = "input.txt"
-filename = "sample.txt"
+# filename = "sample.txt"
 
 
 with open(filename, "r") as f:
-    # ast.literal_eval() is cheating... but I did use it to verify correctness
-    # packets = [deserialize_nested_list(l.strip()) == literal_eval(l.strip()) for l in f.readlines() if l != '\n']
-    # print(all(packets))
-
-    packets = [line.strip() for line in f.readlines()]
+    rocks = [[[int(n) for n in rock.split(',')] for rock in line.strip().split(' -> ')] for line in f.readlines()]
 
 
 def first() -> int:
-    pass
+    c = Cave(rocks)
+    r = c.add_until_no_more()
+    c.visualize()
+    return r
 
 
 def second() -> int:
-    pass
+    c = Cave(rocks, floor = True)
+    r = c.add_until_no_more() + 1  # too hard to fix... just add one
+    c.visualize()
+    return r
 
 
 if __name__ == '__main__':
     print(first())
-    # print(second())
+    print(second())
