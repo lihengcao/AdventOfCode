@@ -1,14 +1,12 @@
 # 
 
-from my_code import *
-
 
 filename = "input.txt"
 # filename = "sample.txt"
 
 
 with open(filename, "r") as f:
-    rocks = [line.strip() for line in f.readlines()]
+    arr = [line.strip() for line in f.readlines()]
 
 
 def first() -> int:
