@@ -18,5 +18,5 @@ def second() -> int:
 
 
 if __name__ == '__main__':
-    print(first())
-    # print(second())
+    print("first", first())
+    # print("second", second())
